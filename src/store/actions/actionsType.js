@@ -1,0 +1,12 @@
+export const SET_LIST = 'SET_LIST';
+export const SELECTED_PROPERTY = 'SELECTED_PROPERTY';
+export const REMOVE_SELECTED_PROPERTY = 'REMOVE_SELECTED_PROPERTY';
+
+export const ADD_PROPERTY = 'ADD_PROPERTY';
+export const UPDATE_PROPERTY = 'UPDATE_PROPERTY';
+export const DELETE_PROPERTY = 'DELETE_PROPERTY';
+
+export const ADD_ROOM = 'ADD_ROOM';
+export const UPDATE_ROOM = 'UPDATE_ROOM';
+export const DELETE_ROOM = 'DELETE_ROOM';
+
