@@ -6,13 +6,18 @@ import { Redirect, Link } from 'react-router-dom';
 import Input from '../../UI/Inputs/Input';
 import TextArea from '../../UI/Inputs/TextArea';
 import Radio from '../../UI/Inputs/Radio';
-import * as actions from '../../../store/actions/actions';
+import * as actions from '../../../store/actions';
 
 
 const RoomForm = (props) => {
 
     let roomName = '';
 
+    if (props.location.state) {
+        
+        roomName = 'bedroom ' + props.location.state.roomNumber;
+
+    }
     
     const [room, setRoom] = useState({
         roomId: null,
@@ -23,15 +28,11 @@ const RoomForm = (props) => {
     })
     const [redirect, setRedirect] = useState(null)
     
-    if (props.location.state) {
-        
-        roomName = 'bedroom ' + props.location.state.roomNumber;
-
-    }
     useEffect(() => {
         if (props.location.roomId) {
             console.log('this room can be edited')
             setRoom({
+
                 roomId: props.property.rooms[props.location.roomId].roomId,
                 roomName: props.property.rooms[props.location.roomId].roomName,
                 hours: props.property.rooms[props.location.roomId].hours,
@@ -150,7 +151,7 @@ const RoomForm = (props) => {
 
 const mapStateToProps = state => {
     return {
-        property: state.selected
+        property: state.propertyReducer.selected
     }
 }
 

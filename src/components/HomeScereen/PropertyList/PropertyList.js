@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import * as action from '../../../store/actions/actions';
+import * as action from '../../../store/actions';
 import classes from './PropertyList.module.css';
 
 const PropertyList = (props) => {
@@ -98,7 +98,7 @@ const PropertyList = (props) => {
 
 const mapStateToProps = state => {
     return {
-        workList: state.list
+        workList: state.propertyReducer.list
     }
 }
 

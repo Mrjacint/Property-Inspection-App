@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Input from './../../UI/Inputs/Input';
 import TextArea from './../../UI/Inputs/TextArea';
 import Modal from '../../UI/Modal/Modal';
-import * as actions from '../../../store/actions/actions';
+import * as actions from '../../../store/actions';
 
 const PropertyDetails = (props) => {
 
@@ -206,7 +206,7 @@ const PropertyDetails = (props) => {
 
 const mapStateToProps = state => {
     return {
-        selectedProperty: state.selected
+        selectedProperty: state.propertyReducer.selected
     }
 }
 

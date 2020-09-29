@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Room from './Room/Room';
-import * as actions from '../../../store/actions/actions';
+import * as actions from '../../../store/actions';
 // import RoomForm from './RoomForm';
 // import Modal from './../../UI/Modal/Modal'
 
 const Rooms = (props) => {
 
-    console.log(props)
+    //console.log(props)
 
     let roomsArr = [];
     let renderRooms = null;
@@ -53,7 +53,7 @@ const Rooms = (props) => {
     }
     
     return (
-        <div>
+        <div className="rooms-container" >
             {/* {roomForm} */}
             {renderRooms}
         </div>
@@ -62,7 +62,7 @@ const Rooms = (props) => {
 
 const mapStateToProps = state => {
     return {
-        property: state.selected
+        property: state.propertyReducer.selected
     }
 }
 

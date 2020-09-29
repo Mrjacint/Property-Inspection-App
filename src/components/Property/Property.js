@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 import PropertyDetails from './PropertyDetails/PropertyDetails';
 import AddRoom from './AddRoom/AddRoom';
-import * as actions from '../../store/actions/actions';
+import * as actions from '../../store/actions';
 import Rooms from './Rooms/Rooms';
 import nextRoomNumber from './../../utility/nextRoomNumber/nextRoomNumber';
 
@@ -54,8 +54,8 @@ const Property = (props) => {
 
 const mapStateToProps = state => {
     return {
-        list: state.list,
-        property: state.selected
+        list: state.propertyReducer.list,
+        property: state.propertyReducer.selected
     }
 }
 
